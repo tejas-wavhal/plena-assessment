@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Plena Assessment</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <div class="select">
+    <label for="tokenSelect">Select a Token:</label>
+    <select id="tokenSelect">
+      <option value="bitcoin">Bitcoin</option>
+      <option value="ethereum">Ethereum</option>
+      <option value="tether">Tether</option>
+      <option value="usd-coin">USD Coin</option>
+    </select>
+  </div>
+
+  <div id="coinGeckoWidget"></div>
+
+  <script type="text/javascript" src="assets/js/coinGeckoWidget.js"></script>
+  <script>
+
+    // Handle option change 
+    const tokenSelect = document.getElementById("tokenSelect");
+    tokenSelect.addEventListener("change", function () {
+      const selectedToken = tokenSelect.value;
+      loadTokenDetails(selectedToken);
+    });
+
+    //  default token = Bitcoin
+    loadTokenDetails("bitcoin"); 
+  </script>
+</body>
+
+</html>
